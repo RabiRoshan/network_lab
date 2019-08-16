@@ -35,9 +35,9 @@ while True:
 
 	if not data: 
 		break
-	#returnMessage = checkHammingCode(data)
+	returnMessage = checkHammingCode(data)
 	# TO MAKE ERROR USE THE NEXT LINE
-	returnMessage = checkHammingCode(data.replace('0','1',1))	
+	#returnMessage = checkHammingCode(data.replace('0','1',1))	
 		 
 	c.sendall(returnMessage) 
 c.close() 
