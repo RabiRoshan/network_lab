@@ -1,6 +1,6 @@
-#RABI ROSHAN
-#CSB
-#12170054
+# RABI ROSHAN
+# CSB
+# 12170054
 
 import socket
 import sys
@@ -13,13 +13,16 @@ server_address = ('localhost', 10000)
 print >>sys.stderr, 'starting up on %s port %s' % server_address
 sock.bind(server_address)
 
-while True:
-    print >>sys.stderr, '\nwaiting to receive message'
-    data, address = sock.recvfrom(4096)
-    
-    print >>sys.stderr, 'received %s bytes from %s' % (len(data), address)
-    print >>sys.stderr, data
-    
-    if data:
-        sent = sock.sendto(data, address)
-        print >>sys.stderr, 'sent %s bytes back to %s' % (sent, address)
+try:
+    while True:
+        print >>sys.stderr, '\nwaiting to receive message'
+        data, address = sock.recvfrom(4096)
+
+        print >>sys.stderr, 'received %s bytes from %s' % (len(data), address)
+        print >>sys.stderr, data
+
+        if data:
+            sent = sock.sendto(data, address)
+            print >>sys.stderr, 'sent %s bytes back to %s' % (sent, address)
+except:
+    print("\b\bGoodbye!\n")
